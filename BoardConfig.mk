@@ -63,7 +63,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_MKBOOTIMG_ARGS += \
 	--kernel_offset $(BOARD_KERNEL_OFFSET) \
-	--ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+	--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
 	--tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
 	--second_offset $(BOARD_SECOND_OFFSET) \
 	--header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
