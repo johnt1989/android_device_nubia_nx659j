@@ -43,7 +43,7 @@ QCOM_BOARD_PLATFORMS += kona
 TARGET_PREBUILT_KERNEL := device/nubia/NX659J/prebuilt/kernel
 TARGET_PREBUILT_DTB := device/nubia/NX659J/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := device/nubia/NX659J/prebuilt/recovery_dtbo
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+#BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 
