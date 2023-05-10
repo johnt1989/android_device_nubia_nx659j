@@ -32,7 +32,7 @@ odm				/odm           ext4                                   wait,logical,first_
 /bt_firmware         vfat    /dev/block/bootdevice/by-name/bluetooth     flags=backup=1;display="Bluetooth"
 /spunvm              vfat    /dev/block/bootdevice/by-name/spunvm        flags=backup=1;display="Spunvm"
 /splash              emmc    /dev/block/bootdevice/by-name/splash        flags=backup=1;flashimg;display="Splash"
-/tz                  emmc    /dev/block/bootdevice/by-name/tz            flags=backup=1;flashjmg;display="Tz"
+/tz                  emmc    /dev/block/bootdevice/by-name/tz            flags=backup=1;flashimg;display="Tz"
 /vbmeta              emmc    /dev/block/bootdevice/by-name/vbmeta        flags=backup=1;flashimg;display="Vbmeta"
 /vbmeta_system	   emmc	/dev/block/bootdevice/by-name/vbmeta_system
 /keystore            emmc    /dev/block/bootdevice/by-name/keystore

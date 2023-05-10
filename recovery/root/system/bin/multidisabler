@@ -45,7 +45,7 @@ disable_fbe() {
       sed -i -e 's/\,fileencryption\=aes\-256\-xts\:aes\-256\-cts\:v2\+inlinecrypt\_optimized\,wrappedkey\,//g' -e 's/\,keydirectory\=\/metadata\/vold\/metadata\_encryption//g' \
              -e 's/\,inlinecrypt//g' -e 's/\,wrappedkey//g' $i      # This comments out the offending line and adds an edited one.
       sed -i -e 's/^\([^#].*\)fileencryption=[^,]*\(.*\)$/# &\n\1encryptable\2/g' $i
-      #file_changed $i $md5
+      file_changed $i $md5
     fi
   done
 }
@@ -125,20 +125,6 @@ echo "Multi-disabler v3.1"
 echo "running Android 9 or later."
 echo " "
 
-os=$(getprop ro.build.version.release)
-major=${os%%.*}
-bl=$(getprop ro.boot.bootloader)
-dp=$(getprop ro.boot.dynamic_partitions)
-
-fw=${bl:$((${#bl} - 4)):4}
-
-device=${bl:0:$((${#bl} - 8))}
-mft=$(getprop ro.product.manufacturer | tr '[A-Z]' '[a-z]')
-
-echo " - Detected a $device device with a $fw bootloader."
-echo " - The environment appears to be Android $major."
-echo " "
-
 echo " - Mounting $ANDROID_ROOT..."
 mount $ANDROID_ROOT 2>/dev/null
 mount -o remount,rw $ANDROID_ROOT 2>/dev/null
@@ -162,12 +148,12 @@ if ! mount | grep /vendor >/dev/null; then
   exit 3
 fi
 
-vendor_free_size_check
+resize_vendor
 disable_fbe
 disable_fde
 disable_avb
-disable_frp
 disable_recovery_restoration
+disable_frp
 debloat
 
 echo " - Unmounting /vendor..."
