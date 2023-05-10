@@ -1,5 +1,3 @@
-LOCAL_PATH := device/nubia/NX659J
-
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
