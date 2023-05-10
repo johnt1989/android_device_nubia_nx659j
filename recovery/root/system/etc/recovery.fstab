@@ -49,7 +49,7 @@ odm                                                     /odm                   e
 /dev/block/bootdevice/by-name/efs	                   /efs		           ext4	defaults			               recoveryonly
 /dev/block/bootdevice/by-name/sec_efs	               /sec_efs	           ext4	defaults		               	recoveryonly
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                           recoveryonly
-/dev/block/bootdevice/by-name/spunvm                    /spunvm                vfat    defaults                           recoveryonly
-/dev/block/bootdevice/by-name/modem                     /firmware_mnt          vfat    defaults                           recoveryonly
+/dev/block/bootdevice/by-name/spunvm                    /spunvm                ext4    defaults                           recoveryonly
+/dev/block/bootdevice/by-name/modem                     /firmware_mnt          ext4    defaults                           recoveryonly
 /dev/block/bootdevice/by-name/dsp                       /dsp                   ext4    defaults                           recoveryonly
-/dev/block/bootdevice/by-name/bluetooth                 /bt_firmware           vfat    defaults                           recoveryonly
+/dev/block/bootdevice/by-name/bluetooth                 /bt_firmware           ext4    defaults                           recoveryonly
