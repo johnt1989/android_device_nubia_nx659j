@@ -1,0 +1,11 @@
+on early-init
+    setprop sys.insmod.start 1
+    setprop sys.insmod.end 0
+
+on init
+    mkdir /storage/usba
+    mkdir /usba_sdcard
+
+on property:sys.insmod.start=1
+   insmod /vendor/lib/modules/texfat.ko
+   setprop sys.insmod.end 1
